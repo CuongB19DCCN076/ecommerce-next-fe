@@ -1,4 +1,5 @@
-import * as React from 'react';
+
+// ** mui
 import { styled } from '@mui/material/styles';
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -7,8 +8,16 @@ import IconButton from '@mui/material/IconButton';
 
 // import Badge from '@mui/material/Badge';
 import { NextPage } from 'next';
+
+// ** icon
 import IconifyIcon from 'src/components/Icon';
-import UserDropdown from 'src/components/user-dropdown';
+
+// ** layout
+import UserDropdown from 'src/views/layouts/components/user-dropdown';
+
+// ** toggle
+import ModeToggle from './components/mode-toggle';
+import LanguageDropdown from './components/language-dropdown';
 
 const drawerWidth: number = 240;
 
@@ -74,12 +83,9 @@ const HorizontalLayout: NextPage<TProps> = ({ open, toggleDrawer, isHideMenu }) 
                 >
                     Dashboard
                 </Typography>
+                <LanguageDropdown />
+                <ModeToggle />
                 <UserDropdown />
-                {/* <IconButton color="inherit">
-                    <Badge badgeContent={4} color="secondary">
-                        <IconifyIcon icon={"tdesign:notification"} />
-                    </Badge>
-                </IconButton> */}
             </Toolbar>
         </AppBar>
     )

@@ -15,12 +15,24 @@ import { Box } from '@mui/material';
 
 // ** auth
 import { useAuth } from 'src/hooks/useAuth';
+
+// ** next
 import Image from 'next/image';
-import IconifyIcon from '../Icon';
+
+// ** icon
+import IconifyIcon from '../../../../components/Icon';
+
+// ** i18next
+import { useTranslation } from 'react-i18next';
 
 
 const UserDropdown = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+    // ** i18next
+    const { t } = useTranslation();
+
+    // ** auth
     const { user, logout } = useAuth();
     const open = Boolean(anchorEl);
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -39,7 +51,7 @@ const UserDropdown = () => {
             <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
                 {/* <Typography sx={{ minWidth: 100 }}>Contact</Typography>
                 <Typography sx={{ minWidth: 100 }}>Profile</Typography> */}
-                <Tooltip title="Account settings">
+                <Tooltip title={t("Account")}>
                     <IconButton
                         onClick={handleClick}
                         size="small"
