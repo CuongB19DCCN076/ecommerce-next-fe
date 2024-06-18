@@ -18,6 +18,8 @@ interface IBox extends BoxProps {
 const StyledItemLanguage = styled(Box)<IBox>(({ selected }) => {
 
     return ({
+        margin: "5px",
+        borderRadius: "10px",
         "&:hover": {
             cursor: "pointer",
             backgroundColor: "red",
@@ -75,7 +77,7 @@ const LanguageDropdown = () => {
                 }}
             >
                 {LANGUAGE_OPTIONS.map((language) => (
-                    <StyledItemLanguage selected={language.value === i18n.language} key={language.value} onClick={() => handleChangeLanguage(language.value)}><Typography>{language.lang}</Typography></StyledItemLanguage>
+                    <StyledItemLanguage selected={language.value === i18n.language} key={language.value} onClick={() => handleChangeLanguage(language.value)}><Typography >{language.lang}</Typography></StyledItemLanguage>
                 ))}
 
             </Popover>
